@@ -10,7 +10,7 @@ build:
 	./gradlew clean build
 
 install:
-	./gradlew installShadowDist
+	./gradlew installDist
 run-dist:
 	./java-project/app/build/install/app/bin/app
 run:

@@ -8,11 +8,12 @@ public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter the game number and press Enter.");
-        System.out.println("1 - Greet\n" + "2 - Even\n" + "3 - Calc\n" + "4 - Gcd\n" + "5 - Progression\n" + "6 - Prime\n" + "0 - Exit");
+        System.out.println("1 - Greet\n" + "2 - Even\n" + "3 - Calc\n" + "4 - Gcd\n" + "5 - Progression\n" + "6 "
+                + "- Prime\n" + "0 - Exit");
         System.out.print("Your choice: ");
         String userSelection = scanner.next();
         boolean vibor = isNumeric(userSelection);
-        if (vibor == false) {
+        if (!vibor) {
             return;
         }
         int userSelection1 = Integer.parseInt(userSelection);

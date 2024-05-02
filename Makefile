@@ -12,7 +12,7 @@ build:
 install:
 	./gradlew installDist
 run-dist:
-	./java-project/app/build/install/app/bin/app
+	./app/build/install/app/bin/app
 run:
 	./gradlew run
 

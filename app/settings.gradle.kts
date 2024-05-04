@@ -1,1 +1,1 @@
-rootProject.name = "java-package"
+rootProject.name = "app"

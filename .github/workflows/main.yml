@@ -19,8 +19,8 @@ jobs:
           gradle-version: 8.5
       - run: ./gradlew checkstyleMain
       - run: ./gradlew test
-      - name: Publish code coverage
-        uses: paambaati/codeclimate-action@v5.0.0
+      #  - name: Publish code coverage
+      #   uses: paambaati/codeclimate-action@v5.0.0
         # env:
         #    CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
         #    JACOCO_SOURCE_PATH: app/src/main/java

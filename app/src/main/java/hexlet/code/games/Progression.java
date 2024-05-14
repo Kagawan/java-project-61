@@ -6,7 +6,6 @@ import java.util.Random;
 import java.util.Scanner;
 
 import static hexlet.code.games.Cli.name;
-import static org.apache.commons.lang3.StringUtils.isNumeric;
 
 
 public class Progression {
@@ -24,10 +23,11 @@ public class Progression {
         System.out.println();
         System.out.print("Your answer: ");
         String userSelection = scanner.next();
-        boolean vibor = isNumeric(userSelection);
+        Calc.issNumeric(userSelection);
+       /* boolean vibor = isNumeric(userSelection);
         if (!vibor) {
             return;
-        }
+        }*/
         int userSelection1 = Integer.parseInt(userSelection);
         int answer = answerProgress[randomNumber1];
         Engine.engine(answer, userSelection1);

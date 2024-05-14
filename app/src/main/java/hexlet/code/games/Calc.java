@@ -8,10 +8,18 @@ import java.util.Random;
 import java.util.Scanner;
 
 import static hexlet.code.games.Cli.name;
-import static org.apache.commons.lang3.StringUtils.isNumeric;
 
 public class Calc {
     public static String randomItem;
+    public static void issNumeric(String str) {
+        boolean isOnlyDigits = true;
+        for(int i = 0; i < str.length() && isOnlyDigits; i++) {
+            if(!Character.isDigit(str.charAt(i))) {
+                isOnlyDigits = false;
+                System.exit(0);
+            }
+        }
+    }
     public static void item() {
         List<String> items = new ArrayList<>();
         items.add("+");
@@ -37,7 +45,11 @@ public class Calc {
         String userSelection = scanner.next();
         if (userSelection.contains("-")) {
             str = userSelection.replace("-", "");
-            boolean vibor = isNumeric(str);
+            Calc.issNumeric(str);
+        } else {
+            Calc.issNumeric(userSelection);
+        }
+            /*boolean vibor = isNumeric(str);
             if (!vibor) {
                 System.exit(0);
             }
@@ -46,12 +58,12 @@ public class Calc {
             if (!vibor) {
                 System.exit(0);
             }
-        }
+        }*/
         int userSelection1 = Integer.parseInt(userSelection);
         Engine.engine(answer, userSelection1);
         return;
     }
-    public static void getCalc() {
+    public static void calculator() {
         System.out.println("What is the result of the expression?");
         System.out.print("Question: ");
         Random random1 = new Random();

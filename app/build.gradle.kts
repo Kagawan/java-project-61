@@ -10,7 +10,7 @@ plugins {
     id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
-group = "hexlet.code.games.App"
+group = "hexlet.code.games"
 
 version = "1.0-SNAPSHOT"
 

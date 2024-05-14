@@ -1,9 +1,6 @@
 package hexlet.code.games;
 
 import java.util.Scanner;
-
-import static org.apache.commons.lang3.StringUtils.isNumeric;
-
 public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -12,10 +9,11 @@ public class App {
                 + "- Prime\n" + "0 - Exit");
         System.out.print("Your choice: ");
         String userSelection = scanner.next();
-        boolean vibor = isNumeric(userSelection);
+        Calc.issNumeric(userSelection);
+        /*boolean vibor = isNumeric(userSelection);
         if (!vibor) {
             return;
-        }
+        }*/
         int userSelection1 = Integer.parseInt(userSelection);
         if (userSelection1 == 0) {
             return;
@@ -34,7 +32,7 @@ public class App {
         if (userSelection1 == 3) {
             System.out.println("Welcome to the Brain Games!");
             Cli.getName();
-            Calc.getCalc();
+            Calc.calculator();
             return;
         }
         if (userSelection1 == 4) {

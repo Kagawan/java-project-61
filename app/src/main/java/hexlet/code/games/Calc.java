@@ -13,8 +13,8 @@ public class Calc {
     public static String randomItem;
     public static void issNumeric(String str) {
         boolean isOnlyDigits = true;
-        for(int i = 0; i < str.length() && isOnlyDigits; i++) {
-            if(!Character.isDigit(str.charAt(i))) {
+        for (int i = 0; i < str.length() && isOnlyDigits; i++) {
+            if (!Character.isDigit(str.charAt(i))) {
                 isOnlyDigits = false;
                 System.exit(0);
             }

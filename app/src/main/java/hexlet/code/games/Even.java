@@ -5,9 +5,8 @@ import hexlet.code.Engine;
 import java.util.Random;
 import java.util.Scanner;
 
-import static hexlet.code.games.Cli.name;
-
 public class Even {
+    static final int RANDOM_NUMBER_FROM_0_TO_100 = 100;
     public static String chetNechet(int number) {
         if ((number % 2) == 0) {
             return "yes";
@@ -22,9 +21,9 @@ public class Even {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        int randomNumber = random.nextInt(100);
-        int randomNumber2 = random.nextInt(100);
-        int randomNumber3 = random.nextInt(100);
+        int randomNumber = random.nextInt(RANDOM_NUMBER_FROM_0_TO_100);
+        int randomNumber2 = random.nextInt(RANDOM_NUMBER_FROM_0_TO_100);
+        int randomNumber3 = random.nextInt(RANDOM_NUMBER_FROM_0_TO_100);
         System.out.print("Question: " + randomNumber + "\n" + "Your answer: ");
         String answer1 = Even.chetNechet(randomNumber);
         String userSelection1 = scanner.next();
@@ -37,6 +36,6 @@ public class Even {
         String answer3 = Even.chetNechet(randomNumber3);
         String userSelection3 = scanner.next();
         Engine.engine(answer3, userSelection3);
-        System.out.println("Congratulations, " + name + "!");
+        System.out.println("Congratulations, " + Cli.getName() + "!");
     }
 }

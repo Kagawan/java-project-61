@@ -4,11 +4,8 @@ import hexlet.code.Engine;
 
 import java.util.Random;
 import java.util.Scanner;
-
-import static hexlet.code.games.Cli.name;
-
-
 public class Progression {
+    static final int RANDOM_NUMBER_FROM_0_TO_TEN = 10;
     public static void progEngine(int randomNumber1, String str) {
         Scanner scanner = new Scanner(System.in);
         String[] words = str.split(" ");
@@ -24,10 +21,6 @@ public class Progression {
         System.out.print("Your answer: ");
         String userSelection = scanner.next();
         Calc.issNumeric(userSelection);
-       /* boolean vibor = isNumeric(userSelection);
-        if (!vibor) {
-            return;
-        }*/
         int userSelection1 = Integer.parseInt(userSelection);
         int answer = answerProgress[randomNumber1];
         Engine.engine(answer, userSelection1);
@@ -38,9 +31,9 @@ public class Progression {
         String str = "5 7 9 11 13 15 17 19 21 23";
         String str2 = "2 5 8 11 14 17 20 23 26 29";
         String str3 = "14 19 24 29 34 39 44 49 54 59";
-        int randomNumber1 = random1.nextInt(10);
-        int randomNumber2 = random1.nextInt(10);
-        int randomNumber3 = random1.nextInt(10);
+        int randomNumber1 = random1.nextInt(RANDOM_NUMBER_FROM_0_TO_TEN);
+        int randomNumber2 = random1.nextInt(RANDOM_NUMBER_FROM_0_TO_TEN);
+        int randomNumber3 = random1.nextInt(RANDOM_NUMBER_FROM_0_TO_TEN);
         System.out.println("What number is missing in the progression?");
         System.out.print("Question: ");
         Progression.progEngine(randomNumber1, str);
@@ -50,6 +43,6 @@ public class Progression {
 
         System.out.print("Question: ");
         Progression.progEngine(randomNumber3, str3);
-        System.out.print("Congratulations, " + name + "!");
+        System.out.print("Congratulations, " + Cli.getName() + "!");
     }
 }

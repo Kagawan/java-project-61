@@ -2,6 +2,10 @@ package hexlet.code.games;
 
 import java.util.Scanner;
 public class App {
+    static final int CHOOSE_GAMES_3 = 3;
+    static final int CHOOSE_GAMES_4 = 4;
+    static final int CHOOSE_GAMES_5 = 5;
+    static final int CHOOSE_GAMES_6 = 6;
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter the game number and press Enter.");
@@ -10,10 +14,6 @@ public class App {
         System.out.print("Your choice: ");
         String userSelection = scanner.next();
         Calc.issNumeric(userSelection);
-        /*boolean vibor = isNumeric(userSelection);
-        if (!vibor) {
-            return;
-        }*/
         int userSelection1 = Integer.parseInt(userSelection);
         if (userSelection1 == 0) {
             return;
@@ -21,35 +21,35 @@ public class App {
         System.out.println();
         if (userSelection1 == 1) {
             System.out.println("Welcome to the Brain Games!");
-            Cli.getName();
+            Cli.getCli();
         }
         if (userSelection1 == 2) {
             System.out.println("Welcome to the Brain Games!");
-            Cli.getName();
+            Cli.getCli();
             Even.getEven();
             return;
         }
-        if (userSelection1 == 3) {
+        if (userSelection1 == CHOOSE_GAMES_3) {
             System.out.println("Welcome to the Brain Games!");
-            Cli.getName();
+            Cli.getCli();
             Calc.calculator();
             return;
         }
-        if (userSelection1 == 4) {
+        if (userSelection1 == CHOOSE_GAMES_4) {
             System.out.println("Welcome to the Brain Games!");
-            Cli.getName();
+            Cli.getCli();
             Gcd.getGcd();
             return;
         }
-        if (userSelection1 == 5) {
+        if (userSelection1 == CHOOSE_GAMES_5) {
             System.out.println("Welcome to the Brain Games!");
-            Cli.getName();
+            Cli.getCli();
             Progression.progres();
             return;
         }
-        if (userSelection1 == 6) {
+        if (userSelection1 == CHOOSE_GAMES_6) {
             System.out.println("Welcome to the Brain Games!");
-            Cli.getName();
+            Cli.getCli();
             Prime.prime();
             return;
         }

@@ -24,7 +24,7 @@ public class App {
         }
         int chooseGame1 = Integer.parseInt(chooseGame);
         if (chooseGame1 == CHOOSE_GAMES_0) {
-
+        return;
         }
         System.out.println();
         if (chooseGame1 == CHOOSE_GAMES_1) {
@@ -35,19 +35,16 @@ public class App {
             System.out.println("Welcome to the Brain Games!");
             Cli.getCli();
             Even.getEven();
-
         }
         if (chooseGame1 == CHOOSE_GAMES_3) {
             System.out.println("Welcome to the Brain Games!");
             Cli.getCli();
             Calc.calculator();
-
         }
         if (chooseGame1 == CHOOSE_GAMES_4) {
             System.out.println("Welcome to the Brain Games!");
             Cli.getCli();
             Gcd.getGcd();
-
         }
         if (chooseGame1 == CHOOSE_GAMES_5) {
             System.out.println("Welcome to the Brain Games!");

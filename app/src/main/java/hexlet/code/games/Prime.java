@@ -3,9 +3,10 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 import java.util.Random;
-import java.util.Scanner;
 public class Prime {
     static final int RANDOM_NUMBER_FROM_0_TO_100 = 100;
+    static final int NUMBER_ROUNDS = 3;
+    private static String questionPlayer;
     public static String isSimple(int number) {
         if (number < 2) {
             return "no";
@@ -18,27 +19,14 @@ public class Prime {
         return "yes";
     }
     public static void prime() {
-        Scanner scanner = new Scanner(System.in);
         Random random1 = new Random();
-        int randomNumber1 = random1.nextInt(RANDOM_NUMBER_FROM_0_TO_100);
-        int randomNumber2 = random1.nextInt(RANDOM_NUMBER_FROM_0_TO_100);
-        int randomNumber3 = random1.nextInt(RANDOM_NUMBER_FROM_0_TO_100);
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-        System.out.println("Question: " + randomNumber1);
-        String answer = Prime.isSimple(randomNumber1);
-        System.out.print("Your answer: ");
-        String userSelection = scanner.next();
-        Engine.engine(answer, userSelection);
-        System.out.println("Question: " + randomNumber2);
-        String answer2 = Prime.isSimple(randomNumber2);
-        System.out.print("Your answer: ");
-        String userSelection2 = scanner.next();
-        Engine.engine(answer2, userSelection2);
-        System.out.println("Question: " + randomNumber3);
-        String answer3 = Prime.isSimple(randomNumber3);
-        System.out.print("Your answer: ");
-        String userSelection3 = scanner.next();
-        Engine.engine(answer3, userSelection3);
-        System.out.print("Congratulations, " + Cli.getName() + "!");
+        for (int i = 0; i < NUMBER_ROUNDS; i++) {
+            int randomNumber1 = random1.nextInt(RANDOM_NUMBER_FROM_0_TO_100);
+            questionPlayer = "Question: " + randomNumber1;
+            String answer = Prime.isSimple(randomNumber1);
+            Engine.engine(answer, questionPlayer);
+            System.out.print("Congratulations, " + Cli.getName() + "!");
+        }
     }
 }

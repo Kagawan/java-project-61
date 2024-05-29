@@ -16,7 +16,12 @@ public class App {
                 + "- Prime\n" + "0 - Exit");
         System.out.print("Your choice: ");
         String chooseGame = scanner.next();
-        Calc.issNumeric(chooseGame);
+        boolean isOnlyDigits = true;
+        for (int i = 0; i < chooseGame.length() && isOnlyDigits; i++) {
+            if (!Character.isDigit(chooseGame.charAt(i))) {
+                System.exit(0);
+            }
+        }
         int chooseGame1 = Integer.parseInt(chooseGame);
         if (chooseGame1 == CHOOSE_GAMES_0) {
             return;
@@ -47,7 +52,7 @@ public class App {
         if (chooseGame1 == CHOOSE_GAMES_5) {
             System.out.println("Welcome to the Brain Games!");
             Cli.getCli();
-            Progression.progres();
+            Progression.progress();
             return;
         }
         if (chooseGame1 == CHOOSE_GAMES_6) {

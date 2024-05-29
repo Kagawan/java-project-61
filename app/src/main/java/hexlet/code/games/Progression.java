@@ -2,31 +2,27 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
+import java.util.Arrays;
 import java.util.Random;
-import java.util.Scanner;
 public class Progression {
     static final int RANDOM_NUMBER_FROM_0_TO_TEN = 10;
+    private static String questionPlayer1;
     public static void progEngine(int randomNumber1, String str) {
-        Scanner scanner = new Scanner(System.in);
         String[] words = str.split(" ");
         int[] answerProgress = new int[words.length];
         for (int i = 0; i < words.length; i++) {
             answerProgress[i] = Integer.parseInt(words[i]);
         }
         words[randomNumber1] = "..";
-        for (String word : words) {
-            System.out.print(word + " ");
-        }
-        System.out.println();
-        System.out.print("Your answer: ");
-        String userSelection = scanner.next();
-        Calc.issNumeric(userSelection);
-        int userSelection1 = Integer.parseInt(userSelection);
+        questionPlayer1 = Arrays.toString(words);
+        String newWord = questionPlayer1.substring(0, questionPlayer1.length() - 1);
+        String newWord2 = "Question: " + newWord.substring(1);
+        String value = newWord2.replaceAll("\\s*,\\s*", " ");
+
         int answer = answerProgress[randomNumber1];
-        Engine.engine(answer, userSelection1);
+        Engine.engine(answer, value);
     }
-    public static void progres() {
-        Scanner scanner = new Scanner(System.in);
+    public static void progress() {
         Random random1 = new Random();
         String str = "5 7 9 11 13 15 17 19 21 23";
         String str2 = "2 5 8 11 14 17 20 23 26 29";
@@ -35,13 +31,11 @@ public class Progression {
         int randomNumber2 = random1.nextInt(RANDOM_NUMBER_FROM_0_TO_TEN);
         int randomNumber3 = random1.nextInt(RANDOM_NUMBER_FROM_0_TO_TEN);
         System.out.println("What number is missing in the progression?");
-        System.out.print("Question: ");
+
         Progression.progEngine(randomNumber1, str);
 
-        System.out.print("Question: ");
         Progression.progEngine(randomNumber2, str2);
 
-        System.out.print("Question: ");
         Progression.progEngine(randomNumber3, str3);
         System.out.print("Congratulations, " + Cli.getName() + "!");
     }

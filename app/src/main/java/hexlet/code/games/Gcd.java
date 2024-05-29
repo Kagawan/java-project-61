@@ -25,7 +25,7 @@ public class Gcd {
             int randomNumber2 = random1.nextInt(RANDOM_NUMBER_FROM_0_TO_100);
             questionPlayer = "Question: " + randomNumber1 + " " + randomNumber2;
             Gcd.engineGcd(randomNumber1, randomNumber2);
-            System.out.print("Congratulations, " + Cli.getName() + "!");
         }
+        System.out.print("Congratulations, " + Cli.getName() + "!");
     }
 }

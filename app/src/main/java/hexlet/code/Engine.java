@@ -17,26 +17,16 @@ public class Engine {
             str = userSelection1.replace("-", "");
             Calc.issNumeric(str);
             int userSelection2 = Integer.parseInt(userSelection1);
-            if (!answer.equals(userSelection2)) {
-                System.out.println("'" + userSelection2 + "'" + " is wrong answer ;(. Correct answer was " + "'"
-                        + answer + "'.");
-                System.out.println("Let's try again, " + Cli.getName() + "!");
-                System.exit(0);
-            } else {
-                System.out.println("Correct!");
-            }
+            correctAnswer(answer, userSelection2);
         } else if (userSelectionIsEven) {
             Calc.issNumeric(userSelection1);
             int userSelection2 = Integer.parseInt(userSelection1);
-            if (!answer.equals(userSelection2)) {
-                System.out.println("'" + userSelection2 + "'" + " is wrong answer ;(. Correct answer was " + "'"
-                        + answer + "'.");
-                System.out.println("Let's try again, " + Cli.getName() + "!");
-                System.exit(0);
-            } else {
-                System.out.println("Correct!");
-            }
+            correctAnswer(answer, userSelection2);
         } else {
+            correctAnswer(answer, userSelection1);
+        }
+    }
+    public static void correctAnswer(Object answer, Object userSelection1) {
         if (!answer.equals(userSelection1)) {
             System.out.println("'" + userSelection1 + "'" + " is wrong answer ;(. Correct answer was " + "'"
                     + answer + "'.");
@@ -44,7 +34,6 @@ public class Engine {
             System.exit(0);
         } else {
             System.out.println("Correct!");
-            }
         }
     }
 }

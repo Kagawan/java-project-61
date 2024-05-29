@@ -37,6 +37,7 @@ public class Progression {
         Progression.progEngine(randomNumber2, str2);
 
         Progression.progEngine(randomNumber3, str3);
+
         System.out.print("Congratulations, " + Cli.getName() + "!");
     }
 }

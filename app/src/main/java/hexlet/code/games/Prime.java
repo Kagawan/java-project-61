@@ -26,7 +26,7 @@ public class Prime {
             questionPlayer = "Question: " + randomNumber1;
             String answer = Prime.isSimple(randomNumber1);
             Engine.engine(answer, questionPlayer);
-            System.out.print("Congratulations, " + Cli.getName() + "!");
         }
+        System.out.print("Congratulations, " + Cli.getName() + "!");
     }
 }

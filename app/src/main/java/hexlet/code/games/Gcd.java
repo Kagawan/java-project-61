@@ -1,31 +1,24 @@
 package hexlet.code.games;
 
-import hexlet.code.Engine;
+import static hexlet.code.Engine.MAX;
+import static hexlet.code.Engine.NUMBEROFROUNDS;
+import static hexlet.code.Engine.random;
+import static hexlet.code.Engine.engine;
 
-import java.util.Random;
 public class Gcd {
-    static final int RANDOM_NUMBER_FROM_0_TO_100 = 100;
-    static final int NUMBER_ROUNDS = 3;
-    private static String questionPlayer;
-    //public static int answerGcd;
-    public static void engineGcd(int randomNumber1, int randomNumber2) {
-        while (randomNumber2 != 0) {
-            int tmp = randomNumber1 % randomNumber2;
-            randomNumber1 = randomNumber2;
-            randomNumber2 = tmp;
+    static final String QUESTION = "Find the greatest common divisor of given numbers.";
+    public static String[][] gcd() {
+        String[][] questionAndAnswers = new String[NUMBEROFROUNDS][2];
+        for (var questionAnswer : questionAndAnswers) {
+            var randomNumber1 = random(1, MAX);
+            var randomNumber2 = random(1, MAX);
+            questionAnswer[0] = Integer.toString(randomNumber1) +  " " + Integer.toString(randomNumber2);
+            questionAnswer[1] = Integer.toString(checkGcd(randomNumber1, randomNumber2));
         }
-        int answerGcd = randomNumber1;
-        Engine.engine(answerGcd, questionPlayer);
+        engine(questionAndAnswers, QUESTION);
+        return questionAndAnswers;
     }
-    public static void getGcd() {
-        System.out.println("Find the greatest common divisor of given numbers.");
-        Random random1 = new Random();
-        for (int i = 0; i < NUMBER_ROUNDS; i++) {
-            int randomNumber1 = random1.nextInt(RANDOM_NUMBER_FROM_0_TO_100);
-            int randomNumber2 = random1.nextInt(RANDOM_NUMBER_FROM_0_TO_100);
-            questionPlayer = "Question: " + randomNumber1 + " " + randomNumber2;
-            Gcd.engineGcd(randomNumber1, randomNumber2);
-        }
-        System.out.print("Congratulations, " + Cli.getName() + "!");
+    public static int checkGcd(int a, int b) {
+        return (a % b == 0) ? Math.abs(b) : checkGcd(b, a % b);
     }
 }

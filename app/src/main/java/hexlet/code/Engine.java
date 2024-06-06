@@ -1,39 +1,31 @@
 package hexlet.code;
-
-import hexlet.code.games.Calc;
 import hexlet.code.games.Cli;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Engine {
-    public static void engine(Object answer, Object questionPlayer) {
+    public static final int MAX = 100;
+    public static final int NUMBEROFROUNDS = 3;
+    public static void engine(String[][] answersAndQuestion, String question) {
         Scanner scanner = new Scanner(System.in);
-        String str = "";
-        System.out.println(questionPlayer);
-        System.out.print("Your answer: ");
-        String userSelection1 = scanner.next();
-        boolean userSelectionIsEven = Calc.issNumeric(userSelection1);
-        if (userSelection1.contains("-")) {
-            str = userSelection1.replace("-", "");
-            Calc.issNumeric(str);
-            int userSelection2 = Integer.parseInt(userSelection1);
-            correctAnswer(answer, userSelection2);
-        } else if (userSelectionIsEven) {
-            Calc.issNumeric(userSelection1);
-            int userSelection2 = Integer.parseInt(userSelection1);
-            correctAnswer(answer, userSelection2);
-        } else {
-            correctAnswer(answer, userSelection1);
-        }
-    }
-    public static void correctAnswer(Object answer, Object userSelection1) {
-        if (!answer.equals(userSelection1)) {
-            System.out.println("'" + userSelection1 + "'" + " is wrong answer ;(. Correct answer was " + "'"
-                    + answer + "'.");
-            System.out.println("Let's try again, " + Cli.getName() + "!");
-            System.exit(0);
-        } else {
+        System.out.println(question);
+        for (var questionAnswer : answersAndQuestion) {
+            System.out.println("Question: " + questionAnswer[0]);
+            System.out.print("Your answer: ");
+            String answer = scanner.next();
+            if (!answer.equals(questionAnswer[1])) {
+                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '"
+                        + questionAnswer[1] + "'.");
+                System.out.println("Let's try again, " + Cli.getName() + "!");
+                return;
+            }
             System.out.println("Correct!");
         }
+        System.out.print("Congratulations, " + Cli.getName() + "!");
+    }
+    public static int random(int min, int max) {
+        Random random = new Random();
+        return random.nextInt(max - min - 1) + min;
     }
 }

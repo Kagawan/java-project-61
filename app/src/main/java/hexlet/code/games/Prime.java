@@ -1,32 +1,31 @@
 package hexlet.code.games;
-
-import hexlet.code.Engine;
-
-import java.util.Random;
+import static hexlet.code.Engine.MAX;
+import static hexlet.code.Engine.NUMBEROFROUNDS;
+import static hexlet.code.Engine.random;
+import static hexlet.code.Engine.engine;
 public class Prime {
-    static final int RANDOM_NUMBER_FROM_0_TO_100 = 100;
-    static final int NUMBER_ROUNDS = 3;
-    private static String questionPlayer;
-    public static String isSimple(int number) {
-        if (number < 2) {
-            return "no";
+    static final String QUESTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    public static String[][] prime() {
+        String[][] questionAndAnswers = new String[NUMBEROFROUNDS][2];
+        for (var questionAnswer : questionAndAnswers) {
+            var randomNumber = random(1, MAX);
+            questionAnswer[0] = Integer.toString(randomNumber);
+            questionAnswer[1] = isSimple(randomNumber)  ? "yes" : "no";
         }
-        for (int i = 2; i <= number / 2; i++) {
+        engine(questionAndAnswers, QUESTION);
+        return questionAndAnswers;
+    }
+
+
+    private static boolean isSimple(int number) {
+        if (number < 2) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(number); i += 1) {
             if (number % i == 0) {
-                return "no";
+                return false;
             }
         }
-        return "yes";
-    }
-    public static void prime() {
-        Random random1 = new Random();
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-        for (int i = 0; i < NUMBER_ROUNDS; i++) {
-            int randomNumber1 = random1.nextInt(RANDOM_NUMBER_FROM_0_TO_100);
-            questionPlayer = "Question: " + randomNumber1;
-            String answer = Prime.isSimple(randomNumber1);
-            Engine.engine(answer, questionPlayer);
-        }
-        System.out.print("Congratulations, " + Cli.getName() + "!");
+        return true;
     }
 }

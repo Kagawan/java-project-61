@@ -28,31 +28,25 @@ public class App {
         }
         System.out.println();
         if (chooseGame1 == CHOOSE_GAMES_1) {
-            System.out.println("Welcome to the Brain Games!");
             Cli.getCli();
         }
         if (chooseGame1 == CHOOSE_GAMES_2) {
-            System.out.println("Welcome to the Brain Games!");
             Cli.getCli();
-            Even.getEven();
+            Even.even();
         }
         if (chooseGame1 == CHOOSE_GAMES_3) {
-            System.out.println("Welcome to the Brain Games!");
             Cli.getCli();
             Calc.calculator();
         }
         if (chooseGame1 == CHOOSE_GAMES_4) {
-            System.out.println("Welcome to the Brain Games!");
             Cli.getCli();
-            Gcd.getGcd();
+            Gcd.gcd();
         }
         if (chooseGame1 == CHOOSE_GAMES_5) {
-            System.out.println("Welcome to the Brain Games!");
             Cli.getCli();
-            Progression.progress();
+            Progression.progression();
         }
         if (chooseGame1 == CHOOSE_GAMES_6) {
-            System.out.println("Welcome to the Brain Games!");
             Cli.getCli();
             Prime.prime();
         }

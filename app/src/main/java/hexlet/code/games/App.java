@@ -31,23 +31,18 @@ public class App {
             Cli.getCli();
         }
         if (chooseGame1 == CHOOSE_GAMES_2) {
-            Cli.getCli();
             Even.even();
         }
         if (chooseGame1 == CHOOSE_GAMES_3) {
-            Cli.getCli();
             Calc.calculator();
         }
         if (chooseGame1 == CHOOSE_GAMES_4) {
-            Cli.getCli();
             Gcd.gcd();
         }
         if (chooseGame1 == CHOOSE_GAMES_5) {
-            Cli.getCli();
             Progression.progression();
         }
         if (chooseGame1 == CHOOSE_GAMES_6) {
-            Cli.getCli();
             Prime.prime();
         }
     }

@@ -14,7 +14,7 @@ public class Progression {
 
      static final String QUESTION = "What number is missing in the progression?";
 
-    public static String[][] progression() {
+    public static void progression() {
         String[][] questionAndAnswers = new String[NUMBEROFROUNDS][2];
         for (var questionAnswer : questionAndAnswers) {
             var interval = random(INTERVALMIN, INTERVALMAX);
@@ -29,7 +29,6 @@ public class Progression {
 
         }
         engine(questionAndAnswers, QUESTION);
-        return questionAndAnswers;
     }
 
 

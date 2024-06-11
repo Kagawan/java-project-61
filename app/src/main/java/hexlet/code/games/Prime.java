@@ -5,7 +5,7 @@ import static hexlet.code.Engine.random;
 import static hexlet.code.Engine.engine;
 public class Prime {
     static final String QUESTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-    public static String[][] prime() {
+    public static void prime() {
         String[][] questionAndAnswers = new String[NUMBEROFROUNDS][2];
         for (var questionAnswer : questionAndAnswers) {
             var randomNumber = random(1, MAX);
@@ -13,7 +13,6 @@ public class Prime {
             questionAnswer[1] = isSimple(randomNumber)  ? "yes" : "no";
         }
         engine(questionAndAnswers, QUESTION);
-        return questionAndAnswers;
     }
 
 

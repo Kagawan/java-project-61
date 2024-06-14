@@ -12,7 +12,7 @@ group = "hexlet.code.games"
 
 version = "1.0-SNAPSHOT"
 
-application { mainClass.set("hexlet.code.games.App") }
+application { mainClass.set("hexlet.code.App") }
 
 repositories {
     mavenCentral()

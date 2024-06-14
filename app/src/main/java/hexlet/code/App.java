@@ -1,4 +1,11 @@
-package hexlet.code.games;
+package hexlet.code;
+
+import hexlet.code.games.Calc;
+import hexlet.code.games.Cli;
+import hexlet.code.games.Even;
+import hexlet.code.games.Gcd;
+import hexlet.code.games.Prime;
+import hexlet.code.games.Progression;
 
 import java.util.Scanner;
 public class App {
@@ -24,7 +31,7 @@ public class App {
         }
         int chooseGame1 = Integer.parseInt(chooseGame);
         if (chooseGame1 == CHOOSE_GAMES_0) {
-        return;
+            return;
         }
         System.out.println();
         if (chooseGame1 == CHOOSE_GAMES_1) {

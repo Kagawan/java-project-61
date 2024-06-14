@@ -7,7 +7,7 @@ import static hexlet.code.Engine.engine;
 
 public class Even {
     static final String QUESTION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-    public static boolean evenOrOddNumber(int randomNumber) {
+    public static boolean isEven(int randomNumber) {
         return randomNumber % 2 == 0;
     }
     public static void even() {
@@ -15,7 +15,7 @@ public class Even {
         for (var questionAnswer : questionAndAnswers) {
             var randomNumber = random(1, MAX);
             questionAnswer[0] = Integer.toString(randomNumber);
-            questionAnswer[1] = evenOrOddNumber(randomNumber) ? "yes" : "no";
+            questionAnswer[1] = isEven(randomNumber) ? "yes" : "no";
         }
         engine(questionAndAnswers, QUESTION);
     }

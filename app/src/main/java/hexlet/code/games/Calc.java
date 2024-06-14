@@ -7,8 +7,6 @@ import static hexlet.code.Engine.engine;
 
 public class Calc {
     private static final String QUESTION = "What is the result of the expression?";
-    /*private static int randomNumber1;
-    private static int randomNumber2;*/
     public static void calculator() {
         String[][] questionAndAnswers = new String[NUMBEROFROUNDS][2];
         for (var questionAnswer : questionAndAnswers) {
